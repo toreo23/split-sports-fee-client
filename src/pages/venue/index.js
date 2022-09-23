@@ -12,7 +12,7 @@ export default [{
             list: ['Admin', 'BallEvent_Player'],
             create: ['Admin'],
             edit: ['Admin'],
-            show: ['Admin']
+            show: ['Admin', 'BallEvent_Player']
         }
     },
     list: VenueList,
