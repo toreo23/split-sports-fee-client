@@ -1,0 +1,1 @@
+export const CONFIG_API_APP = process.env.REACT_APP_CONFIG_API_APP

@@ -9,7 +9,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 const localizer = momentLocalizer(moment) // or globalizeLocalizer
 
 const userFilters = [
-    <TextInput label="email" source="email" alwaysOn />,
+    // <TextInput label="email" source="email" alwaysOn />,
 ];
 
 const BallEventList = () => {
@@ -23,12 +23,17 @@ const BallEventList = () => {
                 <DateField showTime source="startTime"/>
                 <DateField showTime source="endTime"/>
                 <DateField showTime source="deadlineTime"/>
-                <TextField source="totalFee" label="totalFee" />
-                <TextField source="latePenalty" label="latePenalty" />
-                <TextField source="ballSubsidy" label="ballSubsidy" />
-                <TextField source="isBooked" label="isBooked" />
+                <TextField source="totalFee" label="Total Fee" />
+                <TextField source="latePenalty" label="Late Penalty" />
+                <TextField source="ballSubsidy" label="Ball Subsidy" />
+                
                 <TextField source="venue.name" label="Venue" />
-                <ArrayField source="earlyParticipant" label="Early Participant" >
+                <TextField source="isBooked" label="Venue Booked" />
+                <TextField source="minNumPlayer" label="Minimum Player Required" />
+                <TextField source="earlyParticipant.length" label="Early Participant" />
+                <TextField source="lateParticipant.length" label="Late Participant" />
+                <TextField source="ballParticipant.length" label="Bring Ball" />
+                {/* <ArrayField source="earlyParticipant" label="Early Participant" >
                     <SingleFieldList>
                         <ChipField source="displayName" />
                     </SingleFieldList>
@@ -42,7 +47,7 @@ const BallEventList = () => {
                     <SingleFieldList>
                         <ChipField source="displayName" />
                     </SingleFieldList>
-                </ArrayField>
+                </ArrayField> */}
                 <EditButton />
             </Datagrid>
         </List>

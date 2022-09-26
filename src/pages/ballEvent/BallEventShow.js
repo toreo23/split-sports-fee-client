@@ -169,9 +169,9 @@ const BallEventShow = props =>
             <Grid item xs={12} md={4}>
             <SimpleShowLayout>
             <TextField source="id" />
-            <DateField showTime source="startTime" />
-            <DateField showTime source="endTime" />
-            <DateField showTime source="deadlineTime" />
+            <DateField showTime source="startTime" label="Start Time" />
+            <DateField showTime source="endTime" label="End Time"/>
+            <DateField showTime source="deadlineTime" label="Deadline Time" />
             <TextField source="venue.name" label="Venue" />
             
         </SimpleShowLayout>
@@ -231,7 +231,7 @@ const BallEventShow = props =>
                 <ReferenceField label="Author" source="venue" reference="venue">
                 <FunctionField render={record => record && <VenueMap lat={record.coordinates[0]} lon={record.coordinates[1]}></VenueMap>} />
             </ReferenceField>
-                {/* <VenueMap/> */}
+                {/* <VenueGoogleMap/> */}
                 
             <TextField source="venue.name" />
             <TextField source="venue.coordinates" />
@@ -242,13 +242,13 @@ const BallEventShow = props =>
 
                 <Datagrid>
                 <TextField label="ballEventId" source="ballEventId" />
-                <TextField label="Craete Time" source="userId.displayName" />
-                <TextField label="Craete Time" source="action" />
-                <TextField label="Craete Time" source="createdAt" />
+                <TextField label="Player" source="userId.displayName" />
+                <TextField label="Action" source="action" />
+                <TextField label="Create Time" source="createdAt" />
                 </Datagrid>
             </ReferenceManyField>
             </Tab>
-            <Tab label="Calulator">
+            <Tab label="Calculator">
 
             <EventFeeStat></EventFeeStat>
             </Tab>
